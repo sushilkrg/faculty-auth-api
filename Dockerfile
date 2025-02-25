@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Install system dependencies for dlib & face recognition
 RUN apt-get update && apt-get install -y \
-    # cmake \
+    cmake \
     libgtk-3-dev \
     libboost-all-dev \
     libopenblas-dev \
