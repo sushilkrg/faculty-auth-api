@@ -4,6 +4,9 @@ FROM python:3.12-slim AS base
 # Install system dependencies (only necessary ones)
 RUN apt-get update && apt-get install -y \
     cmake \
+    g++ \
+    gcc \
+    build-essential \
     libgtk-3-dev \
     libopenblas-dev \
     liblapack-dev \
