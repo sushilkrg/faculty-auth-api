@@ -3,11 +3,12 @@ FROM python:3.12-slim AS base
 
 # Install system dependencies (only necessary ones)
 RUN apt-get update && apt-get install -y \
+    cmake \
     libgtk-3-dev \
     libopenblas-dev \
     liblapack-dev \
     libx11-dev \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*s
 
 # Set working directory
 WORKDIR /app
