@@ -1,5 +1,5 @@
 # Use Python 3.12 base image
-FROM python:3.12-slim AS base
+FROM python:3.9-slim
 
 # Install system dependencies (only necessary ones)
 RUN apt-get update && apt-get install -y \
@@ -7,11 +7,12 @@ RUN apt-get update && apt-get install -y \
     g++ \
     gcc \
     build-essential \
-    libgtk-3-dev \
-    libopenblas-dev \
+    libboost-all-dev \
+    libatlas-base-dev \
     liblapack-dev \
+    libblas-dev \
     libx11-dev \
-    && rm -rf /var/lib/apt/lists/*s
+    && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
