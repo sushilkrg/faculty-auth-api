@@ -75,6 +75,7 @@ CORS_ALLOW_HEADERS = [
     'user-agent',
     'x-csrftoken',
     'x-requested-with',
+    'Access-Control-Allow-Origin',
 ]
 
 MIDDLEWARE = [
@@ -184,7 +185,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Add this setting to allow credentials
 # CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 # ✅ This will allow your frontend to send cookies or tokens
 CSRF_TRUSTED_ORIGINS = [
     "https://facultyauth.vercel.app"
