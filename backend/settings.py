@@ -49,9 +49,11 @@ INSTALLED_APPS = [
 
 
 # check this heree  
+CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:3000",
+    "https://facultyauth.vercel.app",
 ]
 
 CORS_ALLOW_METHODS = [
@@ -180,9 +182,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Add this setting to allow credentials
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_ALL_ORIGINS = True
+# ✅ This will allow your frontend to send cookies or tokens
+CSRF_TRUSTED_ORIGINS = [
+    "https://facultyauth.vercel.app"
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
