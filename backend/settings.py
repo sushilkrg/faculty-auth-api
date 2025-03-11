@@ -69,7 +69,12 @@ CORS_ALLOW_HEADERS = [
     'accept',
     'accept-encoding',
     'authorization',
+    'Authorization',
     'content-type',
+    'Content-Type',
+    "X-Requested-With",
+    "Accept",
+    "Origin",
     'dnt',
     'origin',
     'user-agent',
@@ -77,6 +82,10 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
     'Access-Control-Allow-Origin',
 ]
+
+# ✅ Fix CORS only for /api/ routes
+CORS_URLS_REGEX = r"^/api/.*$"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -190,6 +199,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CSRF_TRUSTED_ORIGINS = [
     "https://facultyauth.vercel.app"
 ]
+
+# ✅ Handle Preflight Requests Properly
+CORS_PREFLIGHT_MAX_AGE = 86400
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

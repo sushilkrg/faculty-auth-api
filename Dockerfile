@@ -12,7 +12,12 @@ WORKDIR /app
 COPY . .
 
 RUN apt-get update && \
-    apt-get install -y python3-opencv libgl1-mesa-glx && \
+    apt-get install -y pkg-config \
+    libopenblas-dev \
+    liblapack-dev \
+    libx11-dev \
+    libgtk-3-dev \
+    python3-opencv libgl1-mesa-glx && \
     apt-get clean
 
 
